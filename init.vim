@@ -31,7 +31,8 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-nnoremap <silent><F1> :NERDTreeToggle<CR><bar>:TagbarToggle <CR>
+nnoremap <silent><F1> :NERDTreeToggle<CR>
+nnoremap <silent><F2> :TagbarToggle<CR>
 nnoremap <Leader>c<space> <plug>NERDComComment
 
 if has('nvim')
@@ -57,6 +58,6 @@ set encoding=UTF-8
 set autowriteall
 colorscheme jellybeans
 
-map <F4> :! gcc % -o %<<CR>
-map <F5> :! g++ % -o %<<CR>
-map <F6> :! ./%<<CR>
+map <F6> :! gcc % -o %<<CR>
+map <F7> :! g++ % -o %<<CR>
+map <F8> :! ./%<<CR>
