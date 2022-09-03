@@ -32,13 +32,12 @@ let g:airline_powerline_fonts = 1
 
 "=colorscheme==================================================
 Plug 'nanotech/jellybeans.vim'
-let g:jellybeans_overrides = {
-\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
-\}
-if has('termguicolors') && &termguicolors
-    let g:jellybeans_overrides['background']['guibg'] = 'none'
-endif
 Plug 'joshdick/onedark.vim'
+Plug 'tomasiser/vim-code-dark'
+"==============================================================
+
+"=indent=======================================================
+Plug 'jasonwoodland/vim-html-indent'
 "==============================================================
 
 Plug 'ryanoasis/vim-devicons'
@@ -58,6 +57,8 @@ map <F6> :! gcc % -o %<<CR>
 map <F7> :! g++ % -o %<<CR>
 map <F8> :! ./%<<CR>
 
+autocmd BufNewFile *.html 0r ~/.vim/templates/html.skel
+
 set nu
 set tabstop=4
 set softtabstop=4
@@ -67,4 +68,4 @@ set autoindent
 set copyindent
 set encoding=UTF-8
 set autowriteall
-colorscheme onedark
+colorscheme codedark
