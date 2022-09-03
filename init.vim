@@ -30,7 +30,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
 "==============================================================
 
-"=jellybeans===================================================
+"=colorscheme==================================================
 Plug 'nanotech/jellybeans.vim'
 let g:jellybeans_overrides = {
 \    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
@@ -38,6 +38,7 @@ let g:jellybeans_overrides = {
 if has('termguicolors') && &termguicolors
     let g:jellybeans_overrides['background']['guibg'] = 'none'
 endif
+Plug 'joshdick/onedark.vim'
 "==============================================================
 
 Plug 'ryanoasis/vim-devicons'
@@ -66,4 +67,4 @@ set autoindent
 set copyindent
 set encoding=UTF-8
 set autowriteall
-colorscheme jellybeans
+colorscheme onedark
