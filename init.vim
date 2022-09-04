@@ -67,8 +67,11 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set autoindent
+set ai
+set si
+set cindent 
 set copyindent
 set encoding=UTF-8
 set autowriteall
 colorscheme codedark
+
