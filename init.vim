@@ -58,6 +58,9 @@ map <F7> :! g++ % -o %<<CR>
 map <F8> :! ./%<<CR>
 
 autocmd BufNewFile *.html 0r ~/.vim/templates/html.skel
+autocmd BufNewFile *.java 0r ~/.vim/templates/java.skel
+autocmd BufNewFile *.c 0r ~/.vim/templates/c.skel
+autocmd BufNewFile *.cpp 0r ~/.vim/templates/cpp.skel
 
 set nu
 set tabstop=4
