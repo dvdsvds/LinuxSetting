@@ -5,6 +5,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+autocmd CursorHold * silent call CocActionAsync('highlight')
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 "==============================================================
 
 "=tagbar=======================================================
@@ -32,7 +34,7 @@ let g:airline_powerline_fonts = 1
 
 "=colorscheme==================================================
 Plug 'nanotech/jellybeans.vim'
-Plug 'joshdick/onedark.vim'
+Plug 'joshdick/jellybeans.vim'
 Plug 'tomasiser/vim-code-dark'
 "==============================================================
 
@@ -56,6 +58,7 @@ noremap <C-l> <C-w>l
 map <F6> :! gcc % -o %<<CR>
 map <F7> :! g++ % -o %<<CR>
 map <F8> :! ./%<<CR>
+map <C-F5>:! javac %<<CR>
 
 autocmd BufNewFile *.html 0r ~/.vim/templates/html.skel
 autocmd BufNewFile *.java 0r ~/.vim/templates/java.skel
@@ -73,5 +76,4 @@ set cindent
 set copyindent
 set encoding=UTF-8
 set autowriteall
-colorscheme codedark
-
+colorscheme jellybeans
