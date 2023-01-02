@@ -34,7 +34,6 @@ let g:airline_powerline_fonts = 1
 
 "=colorscheme==================================================
 Plug 'nanotech/jellybeans.vim'
-Plug 'joshdick/jellybeans.vim'
 Plug 'tomasiser/vim-code-dark'
 "==============================================================
 
