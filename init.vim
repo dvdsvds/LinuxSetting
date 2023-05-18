@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged') 
 
-"=CoC==========================================================
+"=Coc==========================================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
