@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged') 
 
-"=coc==========================================================
+"=CoC==========================================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
@@ -9,19 +9,19 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 "==============================================================
 
-"=tagbar=======================================================
+"=Tagbar=======================================================
 Plug 'preservim/tagbar'
 nnoremap <silent><F3> :TagbarToggle<CR>
 "==============================================================
 
-"=NERD=========================================================
+"=Nerd=========================================================
 Plug 'preservim/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 nnoremap <silent><F2> :NERDTreeToggle<CR>
 nnoremap <Leader>c<space> <plug>NERDComComment
 "==============================================================
 
-"=airline======================================================
+"=Airline======================================================
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='jellybeans'
