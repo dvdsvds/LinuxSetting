@@ -1,8 +1,11 @@
 call plug#begin('~/.vim/plugged') 
 
+let mapleader = " " 
+let maplocalleader = " "
+
 "=Coc==========================================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <Tab> coc#pum#visible() ? "\<C-n>" : "\<Tab>c
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -11,14 +14,17 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 "=Tagbar=======================================================
 Plug 'preservim/tagbar'
-nnoremap <silent><F3> :TagbarToggle<CR>
+nnoremap <leader>w :TagbarToggle<CR>
 "==============================================================
 
 "=Nerd=========================================================
 Plug 'preservim/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-nnoremap <silent><F2> :NERDTreeToggle<CR>
-nnoremap <Leader>c<space> <plug>NERDComComment
+nnoremap <leader>e :NERDTreeToggle<CR>
+"==============================================================
+
+"=treesitter===================================================
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "==============================================================
 
 "=Airline======================================================
@@ -37,18 +43,14 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'tomasiser/vim-code-dark'
 "==============================================================
 
-"=indent=======================================================
-Plug 'jasonwoodland/vim-html-indent'
-"==============================================================
-
 Plug 'ryanoasis/vim-devicons'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs' 
 
 call plug#end()
 
-let mapleader=','
-nnoremap <Leader>rc :rightbelow vnew $MYVIMRC<CR>
+let mapleader = "," 
+nnoremap<leader> rc :rightbelow vnew $MYVIMRC<CR>
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
@@ -57,12 +59,6 @@ noremap <C-l> <C-w>l
 map <F6> :! gcc % -o %<<CR>
 map <F7> :! g++ % -o %<<CR>
 map <F8> :! ./%<<CR>
-map <C-F5>:! javac %<<CR>
-
-autocmd BufNewFile *.html 0r ~/.vim/templates/html.skel
-autocmd BufNewFile *.java 0r ~/.vim/templates/java.skel
-autocmd BufNewFile *.c 0r ~/.vim/templates/c.skel
-autocmd BufNewFile *.cpp 0r ~/.vim/templates/cpp.skel
 
 set nu
 set tabstop=4
