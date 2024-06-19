@@ -5,8 +5,8 @@ let maplocalleader = " "
 
 "=Coc==========================================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-inoremap <expr> <Tab> coc#pum#visible() ? "\<C-n>" : "\<Tab>c
-inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+inoremap <expr> coc#pum#visible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> coc#pum#visible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -49,8 +49,8 @@ Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
-let mapleader = "," 
-nnoremap<leader> rc :rightbelow vnew $MYVIMRC<CR>
+let mapleader = ";" 
+nnoremap <leader>n :rightbelow vnew $MYVIMRC<CR>
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
