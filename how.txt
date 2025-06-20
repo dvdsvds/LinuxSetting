@@ -1,0 +1,26 @@
+-- How to set up git auto-authentication --
+
+This guide explains how to set up Git auto-authentication.
+
+To do this, you'll need your GitHub email and a personal access token, as they are required for authentication.
+
+First, go to GitHub to generate your Git token.
+Once you've accessed the site, click your profile icon in the top-right corner.
+A dropdown menu will appear — from there, click on "Settings".
+On the Settings page, you'll find "Developer settings" at the bottom of the menu on the left.
+Click "Tokens (classic)" to proceed, and then click the "Generate new token (classic)" button.
+From this point on, read the instructions carefully, select the required scopes, and generate your token.
+
+Now, let's set up auto-authentication.
+
+Go to your project directory, then locate the .git/config file.
+Open the config file using vi, nano, or any text editor.
+After opening it, you'll find the url field under the [remote "origin"] section.
+
+It will look something like this:
+https://github.com/{your-username}/{project-name}.git
+
+Replace it with the following:
+https://{your-username}:{your-token}@github.com/{your-username}/{project-name}.git
+
+Now, when you use the git push command, you'll notice that it no longer asks for authentication.
